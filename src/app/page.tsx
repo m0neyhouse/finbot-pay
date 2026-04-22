@@ -580,7 +580,7 @@ export default function Home() {
               💰 Ver Planos e Preços
             </a>
             <a
-              href="https://wa.me/5500000000000?text=Quero%20saber%20mais%20sobre%20o%20FinBot"
+              href={`https://wa.me/${process.env.NEXT_PUBLIC_SUPPORT_NUMBER || process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "5500000000000"}?text=Quero%20saber%20mais%20sobre%20o%20FinBot`}
               className="btn btn-whatsapp btn-lg"
               target="_blank"
               rel="noopener noreferrer"

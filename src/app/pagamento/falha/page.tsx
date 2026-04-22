@@ -85,7 +85,7 @@ export default function FailurePage() {
             🔄 Tentar Novamente
           </a>
           <a
-            href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "5500000000000"}?text=Tive%20um%20problema%20no%20pagamento%20do%20FinBot`}
+            href={`https://wa.me/${process.env.NEXT_PUBLIC_SUPPORT_NUMBER || process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "5500000000000"}?text=Tive%20um%20problema%20no%20pagamento%20do%20FinBot`}
             target="_blank"
             rel="noopener noreferrer"
             style={{
