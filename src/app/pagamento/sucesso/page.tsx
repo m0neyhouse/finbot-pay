@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import ActivationButton from "./ActivationButton";
 
 export const metadata: Metadata = {
   title: "Pagamento Confirmado — FinBot",
@@ -10,6 +11,7 @@ export default async function SuccessPage({
 }: {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
+
   const params = await searchParams;
   const plan = params.plan as string | undefined;
 
@@ -21,7 +23,8 @@ export default async function SuccessPage({
   };
 
   const planName = plan ? planNames[plan] || plan : "selecionado";
-  const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "5500000000000";
+  const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "5519997483762";
+  const paymentId = params.payment_id as string | undefined;
 
   return (
     <div
@@ -90,8 +93,7 @@ export default async function SuccessPage({
             lineHeight: 1.6,
           }}
         >
-          Agora é só salvar o número do FinBot no WhatsApp e mandar um
-          &quot;Oi&quot; para começar a usar!
+          Agora falta pouco! Clique no botão abaixo para ativar seu assistente no WhatsApp.
         </p>
 
         <div
@@ -113,39 +115,20 @@ export default async function SuccessPage({
               marginBottom: "8px",
             }}
           >
-            Próximo passo
+            Passo Final
           </p>
           <p style={{ fontSize: "1.1rem", color: "#e0e0e0", lineHeight: 1.6 }}>
-            Clique no botão abaixo para iniciar uma conversa com o FinBot no WhatsApp
+            Ao abrir o chat, basta preencher seu nome na mensagem e enviar!
           </p>
         </div>
 
-        <a
-          href={`https://wa.me/${whatsappNumber}?text=Oi!%20Acabei%20de%20assinar%20o%20FinBot%20(plano%20${planName}).%20Quero%20começar!`}
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            display: "inline-flex",
-            alignItems: "center",
-            justifyContent: "center",
-            gap: "8px",
-            background: "#25D366",
-            color: "#fff",
-            padding: "16px 40px",
-            borderRadius: "14px",
-            fontSize: "1.1rem",
-            fontWeight: 700,
-            textDecoration: "none",
-            transition: "all 0.3s ease",
-            border: "none",
-            boxShadow: "0 4px 20px rgba(37,211,102,0.3)",
-          }}
-        >
-          💬 Abrir WhatsApp do FinBot
-        </a>
+        <ActivationButton 
+          paymentId={paymentId || ''} 
+          whatsappNumber={whatsappNumber} 
+        />
 
         <p style={{ marginTop: "24px", fontSize: "0.85rem", color: "#555" }}>
-          Você receberá um e-mail de confirmação em breve.
+          Suporte técnico: @oficialfinbot
         </p>
       </div>
     </div>
