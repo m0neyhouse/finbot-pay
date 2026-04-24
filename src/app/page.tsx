@@ -67,7 +67,14 @@ export default function Home() {
       answer:
         "O FinBot suporta diversas categorias: Alimentação, Transporte, Moradia, Saúde, Educação, Lazer, Investimentos, Fundo de Emergência e muito mais. Ele categoriza automaticamente com inteligência artificial.",
     },
+    {
+      question: "O que é o Modo Assessor (Agenda)?",
+      answer:
+        "O Modo Assessor é uma funcionalidade exclusiva dos planos Premium e Vitalício. Com ele, o FinBot não cuida apenas do seu dinheiro, mas também da sua rotina. Você pode mandar seus compromissos, reuniões e datas importantes e o bot salva tudo na sua agenda, te lembrando com antecedência para você não perder nada.",
+    },
   ];
+
+
 
   return (
     <>
@@ -424,11 +431,11 @@ export default function Home() {
 
           <div className="pricing-launch-banner">
             <p>
-              🔥 <strong>Oferta de Lançamento:</strong> As primeiras 50
+              🔥 <strong>Oferta de Lançamento:</strong> As primeiras 60
               assinaturas garantem acesso{" "}
-              <strong>VITALÍCIO por apenas R$60</strong>. Sem mensalidade.
-              Para sempre.
+              <strong>VITALÍCIO por apenas R$60</strong>. Inclui o exclusivo <strong>MODO ASSESSOR</strong> (Agenda Inteligente).
             </p>
+
             <button
               className="btn btn-gold"
               style={{ marginTop: "16px" }}
@@ -512,11 +519,12 @@ export default function Home() {
               <div className="pricing-divider"></div>
               <ul className="pricing-features">
                 <li>Tudo do plano Trimestral</li>
-                <li>Relatórios diários automáticos</li>
-                <li>Categorização inteligente com IA</li>
+                <li><strong>MODO ASSESSOR:</strong> Agenda Inteligente</li>
+                <li>Lembretes de compromissos e reuniões</li>
                 <li>Suporte VIP</li>
                 <li>Acesso a novos recursos primeiro</li>
               </ul>
+
               <button
                 className="btn btn-secondary"
                 id="btn-plan-annual"
