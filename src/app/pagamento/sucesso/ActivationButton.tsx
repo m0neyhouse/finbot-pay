@@ -20,7 +20,7 @@ export default function ActivationButton({ paymentId, whatsappNumber }: Activati
 
       try {
         // Buscando o token do bot no Railway
-        const botUrl = process.env.NEXT_PUBLIC_BOT_API_URL || 'https://whatsapp-fin-bot-production.up.railway.app';
+        const botUrl = process.env.NEXT_PUBLIC_BOT_API_URL || 'https://finbot-whatsapp-production.up.railway.app';
         const response = await fetch(`${botUrl}/get-token/${paymentId}`);
         if (response.ok) {
           const data = await response.json();
